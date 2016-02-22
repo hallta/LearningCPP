@@ -7,15 +7,21 @@
 //
 
 #include <iostream>
+#include <queue>
+#include <array>
 
 #include "tchar.h"
 #include "constants.h"
 #include "enum.h"
 #include "friend.h"
+#include "family.h"
+#include "arr.h"
 
-using namespace std;
+void playWithQueue();
+void playWithArray();
 
 int main(int argc, const char * argv[]) {
+    using namespace std;
     
     cout << "int 100 is '" << cst(100) << "' when casted" << endl;
     cout << "chr 'd' is " << cst('d') << " when casted" << endl;
@@ -30,7 +36,30 @@ int main(int argc, const char * argv[]) {
     Friend frnd = getFriend("ted");
     cout << "My friend, " << frnd.name + ", " + (frnd.mean ? "is" : "is not") + " mean" << endl;
     
+    Family fooFam = {{}};
+    Family barFam = { { "tree", false } };
+    cout << "family: " << fooFam.frnd.name << endl;
+    cout << "family: " << barFam.frnd.name << endl;
+    
+    int arr[] = {1,2,3};
+    for (int i = 0; i < sizeof(arr); i++)
+        cout << "i = " << i << endl;
+    
+    playWithQueue();
+    playWithArray();
+    
     return 0;
+}
+
+void playWithQueue() {
+    std::queue<int> foo;
+    
+    int i = 0;
+    while (++i < 100)
+        foo.push(i);
+    
+    std::cout << "this array is: " << foo.size() << std::endl;
+    
 }
 
 Friend getFriend(std::string name) {
