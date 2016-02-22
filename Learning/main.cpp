@@ -7,9 +7,11 @@
 //
 
 #include <iostream>
+
 #include "tchar.h"
 #include "constants.h"
 #include "enum.h"
+#include "friend.h"
 
 using namespace std;
 
@@ -25,7 +27,18 @@ int main(int argc, const char * argv[]) {
     SecondNums three = SecondNums::THREE;
     cout << "THREE == " << static_cast<int>(three) << endl;
     
+    Friend frnd = getFriend("ted");
+    cout << "My friend, " << frnd.name + ", " + (frnd.mean ? "is" : "is not") + " mean" << endl;
+    
     return 0;
+}
+
+Friend getFriend(std::string name) {
+    Friend tmp;
+    tmp.name = name;
+    tmp.mean = false;
+    
+    return tmp;
 }
 
 char tchar(int a) {
