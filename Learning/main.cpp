@@ -9,6 +9,7 @@
 #include <iostream>
 #include "tchar.h"
 #include "constants.h"
+#include "enum.h"
 
 using namespace std;
 
@@ -16,11 +17,13 @@ int main(int argc, const char * argv[]) {
     
     cout << "int 100 is '" << cst(100) << "' when casted" << endl;
     cout << "chr 'd' is " << cst('d') << " when casted" << endl;
-    
-    int x{4};
-    x++;
-    
     cout << "constant THIRTY = " << constants::THIRTY << endl;
+    
+    cout << "ONE == " << Nums::ONE << endl;
+    cout << "TWO == " << Nums::TWO << endl;
+    
+    SecondNums three = SecondNums::THREE;
+    cout << "THREE == " << static_cast<int>(three) << endl;
     
     return 0;
 }
