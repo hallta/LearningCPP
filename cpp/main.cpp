@@ -1,5 +1,6 @@
 #include <iostream>
 #include "add.h"
+#include "ball_drop.h"
 
 int main() {
 
@@ -27,6 +28,16 @@ int main() {
     std::cout << un_bracket << std::endl;
     std::cout << static_cast<int>(bracket) << std::endl;
     std::cout << static_cast<char>(static_cast<int>(bracket)) << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "===" << std::endl;
+    std::cout << std::endl;
+    std::cout << "===" << std::endl;
+
+    std::cout << "Enter the initial biulding height: ";
+    double height;
+    std::cin >> height;
+    ball_drop::drop_the_ball(height);
 
     return 0;
 }
