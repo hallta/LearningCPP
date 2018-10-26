@@ -1,6 +1,7 @@
 #include <iostream>
 #include "add.h"
 #include "ball_drop.h"
+#include "arithmetic.h"
 
 int main() {
 
@@ -34,10 +35,17 @@ int main() {
     std::cout << std::endl;
     std::cout << "===" << std::endl;
 
+    // ball drop thing
     std::cout << "Enter the initial biulding height: ";
     double height;
-    std::cin >> height;
+    //std::cin >> height;
+    std::cout << std::endl;
+    height = 1;
     ball_drop::drop_the_ball(height);
+
+    // 3.x
+    arithmetic::mixed_type_math();
+    arithmetic::goofy_assignments();
 
     return 0;
 }
