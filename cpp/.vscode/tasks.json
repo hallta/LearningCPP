@@ -29,7 +29,10 @@
             "options": {
                 "cwd": "${workspaceRoot}"
             },
-            "dependsOn": ["build"]
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
         }
     ]
 }
