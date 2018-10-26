@@ -3,16 +3,17 @@
 
 int main() {
 
-    int x;
-    int y;
+    int x = 1;
+    int y = 2;
 
     std::cout << "Please enter value for x: ";
-    std::cin >> x;
+    //std::cin >> x;
 
     std::cout << "Please enter value for y: ";
-    std::cin >> y;
+    //std::cin >> y;
 
-    std::cout << x << " + " << y << " = " << add(x, y) << std::endl;
+    int result = add(x, y);
+    std::cout << x << " + " << y << " = " << result << std::endl;
 
     return 0;
 }
