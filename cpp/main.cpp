@@ -2,9 +2,28 @@
 #include "add.h"
 #include "ball_drop.h"
 #include "arithmetic.h"
+#include "val_ref_ptr.h"
+
+void do_the_basics();
+void do_ball_drop_thing();
+void do_maths();
+void do_val_ref_ptr_stuff();
 
 int main() {
 
+    std::cout << "== Start ==\n\n";
+
+    do_the_basics();
+    do_ball_drop_thing();
+    do_maths();
+    do_val_ref_ptr_stuff();
+
+    std::cout << "\n\n == End == \n\n";
+
+    return 0;
+}
+
+void do_the_basics() {
     int x = 1;
     int y(2);
 
@@ -34,7 +53,9 @@ int main() {
     std::cout << "===" << std::endl;
     std::cout << std::endl;
     std::cout << "===" << std::endl;
+}
 
+void do_ball_drop_thing() {
     // ball drop thing
     std::cout << "Enter the initial biulding height: ";
     double height;
@@ -42,10 +63,37 @@ int main() {
     std::cout << std::endl;
     height = 1;
     ball_drop::drop_the_ball(height);
+}
 
-    // 3.x
+void do_maths() {
     arithmetic::mixed_type_math();
     arithmetic::goofy_assignments();
+}
 
-    return 0;
+void do_val_ref_ptr_stuff() {
+    std::cout << "\n\n==val/ref/ptr==\n";
+    int val(5);
+    val_ref_ptr::pass_by_val(val);
+    std::cout << val << std::endl;
+
+    int r(5);
+    int &ref = r;
+    val_ref_ptr::pass_by_ref(ref);
+    std::cout << "pass_by_ref == " << ref << std::endl;
+
+    int *ptr = &ref;
+    val_ref_ptr::pass_by_ptr(ptr);
+    std::cout << "pass_by_ptr == " << *ptr << std::endl;
+
+    int re_val = *ptr;
+    val_ref_ptr::pass_by_val(re_val);
+    std::cout << "pass_by_val == " << re_val << std::endl;
+
+    int *re_ptr = &re_val;
+    val_ref_ptr::pass_by_ptr(re_ptr);
+    std::cout << "\n== ... ==\n" << std::endl;
+    std::cout << *re_ptr << std::endl;
+    std::cout << ref << std::endl;
+    std::cout << re_val << std::endl;
+
 }
