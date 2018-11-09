@@ -3,11 +3,13 @@
 #include "ball_drop.h"
 #include "arithmetic.h"
 #include "val_ref_ptr.h"
+#include "scoping.h"
 
 void do_the_basics();
 void do_ball_drop_thing();
 void do_maths();
 void do_val_ref_ptr_stuff();
+void do_scoping();
 
 int main() {
 
@@ -17,6 +19,7 @@ int main() {
     do_ball_drop_thing();
     do_maths();
     do_val_ref_ptr_stuff();
+    do_scoping();
 
     std::cout << "\n\n == End == \n\n";
 
@@ -95,5 +98,8 @@ void do_val_ref_ptr_stuff() {
     std::cout << *re_ptr << std::endl;
     std::cout << ref << std::endl;
     std::cout << re_val << std::endl;
+}
 
+void do_scoping() {
+    ScopingTest::variableShadowing();
 }
