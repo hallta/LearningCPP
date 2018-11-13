@@ -4,12 +4,14 @@
 #include "arithmetic.h"
 #include "val_ref_ptr.h"
 #include "scoping.h"
+#include "rvalue_ref.h"
 
 void do_the_basics();
 void do_ball_drop_thing();
 void do_maths();
 void do_val_ref_ptr_stuff();
 void do_scoping();
+void rvalue_ref();
 
 int main() {
 
@@ -20,6 +22,7 @@ int main() {
     do_maths();
     do_val_ref_ptr_stuff();
     do_scoping();
+    rvalue_ref();
 
     std::cout << "\n\n == End == \n\n";
 
@@ -102,4 +105,12 @@ void do_val_ref_ptr_stuff() {
 
 void do_scoping() {
     ScopingTest::variableShadowing();
+}
+
+void rvalue_ref() {
+    std::cout << "\n\n== starting rvalue_ref() ==\n\n";
+    RValueRefTest::Foo foo;
+    RValueRefTest::Bar bar;
+    bar.moveSomeStuff();
+    std::cout << "\n\n== ending rvalue_ref() ==\n\n";
 }
