@@ -31,6 +31,15 @@ namespace RValueRefTest {
         Bar b2 = b1;
         cout << "Bar b3 = move(b2);\n";
         Bar b3 = move(b2);
+        cout << "Bar b4(b3);\n";
+        Bar b4(b3);
+        cout << "Bar b5( move(b4) );\n";
+        Bar b5( move(b4) );
+        cout << "Bar b6 = move(b5);\n";
+        Bar b6 = move(b5);
+        cout << "Bar b7;\nb7 = move(b6);" << endl;
+        Bar b7;
+        b7 = move(b6);
 
         cout << "done!! moveSomeStuff()" << endl;
     }
