@@ -5,6 +5,7 @@
 #include "val_ref_ptr.h"
 #include "scoping.h"
 #include "rvalue_ref.h"
+#include "lambda.h"
 
 void do_the_basics();
 void do_ball_drop_thing();
@@ -12,6 +13,7 @@ void do_maths();
 void do_val_ref_ptr_stuff();
 void do_scoping();
 void rvalue_ref();
+void do_lambda_stuff();
 
 int main() {
 
@@ -23,8 +25,9 @@ int main() {
     do_val_ref_ptr_stuff();
     do_scoping();
     rvalue_ref();
+    do_lambda_stuff();
 
-    std::cout << "\n\n == End == \n\n";
+    std::cout << "== End == \n\n";
 
     return 0;
 }
@@ -112,5 +115,9 @@ void rvalue_ref() {
     RValueRefTest::Foo foo;
     RValueRefTest::Bar bar;
     bar.moveSomeStuff();
-    std::cout << "\n\n== ending rvalue_ref() ==\n\n";
+    std::cout << "== ending rvalue_ref() ==\n";
+}
+
+void do_lambda_stuff() {
+    Lambda::doLambdaStuff();
 }
