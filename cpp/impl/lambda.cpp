@@ -16,7 +16,16 @@ namespace Lambda {
         auto lambdaA = [](int a) {
             cout << a << endl;
         };
-        lambdaA(1);
+        lambdaA(234879);
 
+        auto lambdaB = [](int a, int b) -> void {
+            cout << a << " ... " << b << endl;
+        };
+
+        int stuff[] = {1, 2, 3, 5, 7, 8};
+        int i = 0;
+        for (auto thing : stuff) {
+            lambdaB(i++, thing);
+        }
     }
 }
