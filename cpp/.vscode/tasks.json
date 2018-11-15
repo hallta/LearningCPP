@@ -9,13 +9,9 @@
             "command": "g++",
             "args": [
                 "-std=c++11",
-                "-o",
-                "main",
-                "-I",
-                "headers/",
-                "-g",
-                "*cpp",
-                "impl/*cpp"
+                "-o", "main",
+                "-I", "headers/",
+                "-g", "*cpp", "impl/*cpp"
             ],
             "group": {
                 "kind": "build",
