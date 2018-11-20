@@ -6,6 +6,7 @@
 #include "scoping.h"
 #include "rvalue_ref.h"
 #include "lambda.h"
+#include "templates.h"
 
 void do_the_basics();
 void do_ball_drop_thing();
@@ -14,6 +15,7 @@ void do_val_ref_ptr_stuff();
 void do_scoping();
 void rvalue_ref();
 void do_lambda_stuff();
+void do_template_stuff();
 
 int main() {
 
@@ -26,6 +28,7 @@ int main() {
     do_scoping();
     rvalue_ref();
     do_lambda_stuff();
+    do_template_stuff();
 
     std::cout << "== End == \n\n";
 
@@ -120,4 +123,8 @@ void rvalue_ref() {
 
 void do_lambda_stuff() {
     Lambda::doLambdaStuff();
+}
+
+void do_template_stuff() {
+    TemplateTests::doTemplateStuff();
 }
