@@ -7,6 +7,7 @@
 #include "rvalue_ref.h"
 #include "lambda.h"
 #include "templates.h"
+#include "interface.h"
 
 void do_the_basics();
 void do_ball_drop_thing();
@@ -21,14 +22,17 @@ int main() {
 
     std::cout << "== Start ==\n\n";
 
-    do_the_basics();
-    do_ball_drop_thing();
-    do_maths();
-    do_val_ref_ptr_stuff();
-    do_scoping();
-    rvalue_ref();
-    do_lambda_stuff();
-    do_template_stuff();
+    InterfaceTest::TheInterface foo(1);
+    foo.doFoo();
+
+  //do_the_basics();
+  //do_ball_drop_thing();
+  //do_maths();
+  //do_val_ref_ptr_stuff();
+  //do_scoping();
+  //rvalue_ref();
+  //do_lambda_stuff();
+  //do_template_stuff();
 
     std::cout << "== End == \n\n";
 
